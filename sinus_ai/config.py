@@ -2,6 +2,8 @@
 
 import os
 
+import numpy as np
+
 # Model architecture
 HIDDEN_SIZE_1 = 64
 HIDDEN_SIZE_2 = 64
@@ -12,6 +14,10 @@ EPOCHS = 5000
 LEARNING_RATE = 0.001
 N_SAMPLES_TRAIN = 1000
 N_SAMPLES_TEST = 200
+
+# Data range
+X_MIN = 0
+X_MAX = 2 * np.pi
 
 # Model persistence
 MODEL_DIR = "models"

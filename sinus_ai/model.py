@@ -1,6 +1,5 @@
 """Neural network model for sine function approximation."""
 
-import torch
 import torch.nn as nn
 from . import config
 

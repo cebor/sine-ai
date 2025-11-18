@@ -18,7 +18,7 @@ from sinus_ai import (
     predict_interactive,
 )
 from sinus_ai.train import evaluate_and_plot
-from sinus_ai.config import N_SAMPLES_TRAIN, N_SAMPLES_TEST, EPOCHS, LEARNING_RATE
+from sinus_ai.config import N_SAMPLES_TEST
 
 
 def mode_train():
@@ -27,7 +27,7 @@ def mode_train():
     
     # Generate data
     print("Generating training data...")
-    x_train, y_train = generate_training_data(n_samples=N_SAMPLES_TRAIN)
+    x_train, y_train = generate_training_data()
     
     # Initialize model
     print("Initializing model...")
@@ -36,7 +36,7 @@ def mode_train():
     
     # Training
     print("Starting training...")
-    model = train_model(model, x_train, y_train, epochs=EPOCHS, lr=LEARNING_RATE)
+    model = train_model(model, x_train, y_train)
     
     # Save model
     print("\nSaving model...")

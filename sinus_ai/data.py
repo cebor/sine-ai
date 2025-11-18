@@ -2,18 +2,28 @@
 
 import numpy as np
 import torch
+from . import config
 
 
-def generate_training_data(n_samples=1000):
+def generate_training_data(n_samples=None, x_min=None, x_max=None):
     """Generates training and test data for the sine function.
     
     Args:
-        n_samples: Number of samples to generate
+        n_samples: Number of samples to generate (default from config)
+        x_min: Minimum x value (default from config)
+        x_max: Maximum x value (default from config)
         
     Returns:
         Tuple of (x_tensor, y_tensor) as PyTorch tensors
     """
-    x = np.linspace(0, 2 * np.pi, n_samples)
+    if n_samples is None:
+        n_samples = config.N_SAMPLES_TRAIN
+    if x_min is None:
+        x_min = config.X_MIN
+    if x_max is None:
+        x_max = config.X_MAX
+    
+    x = np.linspace(x_min, x_max, n_samples)
     y = np.sin(x)
     
     # Convert to PyTorch tensors
