@@ -1,13 +1,20 @@
 """Training utilities for the sine approximation model."""
 
 import os
+
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
 from . import config
 
 
-def train_model(model, x_train, y_train, epochs=None, lr=None):
+def train_model(
+    model: nn.Module,
+    x_train: torch.Tensor,
+    y_train: torch.Tensor,
+    epochs: int | None = None,
+    lr: float | None = None
+) -> nn.Module:
     """Trains the model.
     
     Args:
@@ -46,7 +53,7 @@ def train_model(model, x_train, y_train, epochs=None, lr=None):
     return model
 
 
-def save_model(model, filepath=None):
+def save_model(model: nn.Module, filepath: str | None = None) -> None:
     """Saves the model weights to disk.
     
     Args:
@@ -64,7 +71,12 @@ def save_model(model, filepath=None):
     print(f'Model saved to {filepath}')
 
 
-def evaluate_and_plot(model, x_test, y_test, save_plot=True):
+def evaluate_and_plot(
+    model: nn.Module,
+    x_test: torch.Tensor,
+    y_test: torch.Tensor,
+    save_plot: bool = True
+) -> None:
     """Evaluates the model and displays the results.
     
     Args:

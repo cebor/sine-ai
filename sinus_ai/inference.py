@@ -1,11 +1,12 @@
 """Inference utilities for making predictions with trained models."""
 
 import torch
+import torch.nn as nn
 from .model import SineNet
 from . import config
 
 
-def load_model(filepath=None):
+def load_model(filepath: str | None = None) -> nn.Module:
     """Loads a trained model from disk.
     
     Args:
@@ -24,7 +25,7 @@ def load_model(filepath=None):
     return model
 
 
-def predict(model, x_value):
+def predict(model: nn.Module, x_value: float) -> float:
     """Makes a prediction for a single input value.
     
     Args:
@@ -40,7 +41,7 @@ def predict(model, x_value):
         return prediction.item()
 
 
-def predict_interactive(model=None):
+def predict_interactive(model: nn.Module | None = None) -> None:
     """Interactive prediction loop.
     
     Loads the model if not provided and continuously prompts for input

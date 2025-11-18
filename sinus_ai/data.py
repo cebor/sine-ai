@@ -5,7 +5,11 @@ import torch
 from . import config
 
 
-def generate_training_data(n_samples=None, x_min=None, x_max=None):
+def generate_training_data(
+    n_samples: int | None = None,
+    x_min: float | None = None,
+    x_max: float | None = None
+) -> tuple[torch.Tensor, torch.Tensor]:
     """Generates training and test data for the sine function.
     
     Args:
