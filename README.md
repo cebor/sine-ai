@@ -1,0 +1,133 @@
+# Sinus AI
+
+A neural network that learns to approximate the sine function using PyTorch.
+
+## Features
+
+- **Modular Architecture**: Clean separation of concerns with dedicated modules for model, data, training, and inference
+- **Model Persistence**: Save and load trained model weights
+- **Three Operation Modes**:
+  - **Train**: Train a new model and save weights
+  - **Evaluate**: Load trained model and visualize performance
+  - **Predict**: Interactive mode for real-time predictions
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd sinus-ai
+
+# Install dependencies (using uv)
+uv sync
+```
+
+## Usage
+
+### Interactive Menu
+
+Run without arguments to get an interactive menu:
+
+```bash
+python main.py
+```
+
+This will display:
+```
+=== Sine Approximation with PyTorch ===
+
+Select mode:
+1. Train - Train a new model and save weights
+2. Evaluate - Load and evaluate trained model
+3. Predict - Interactive prediction mode
+4. Exit
+
+Enter choice (1-4):
+```
+
+### Command-Line Interface
+
+Use command-line arguments for direct mode selection:
+
+```bash
+# Train a new model
+python main.py train
+
+# Evaluate existing model
+python main.py evaluate
+
+# Interactive prediction mode
+python main.py predict
+```
+
+### Interactive Prediction Mode
+
+In predict mode, you can continuously enter values and get predictions:
+
+```
+=== Interactive Sine Prediction ===
+Enter a number to get the sine approximation.
+Type 'quit' or 'exit' to stop.
+
+Enter x value: 1.5
+  Predicted: 0.997495
+  Actual:    0.997495
+  Error:     0.000000
+
+Enter x value: 3.14159
+  Predicted: 0.000026
+  Actual:    0.000000
+  Error:     0.000026
+
+Enter x value: quit
+Exiting prediction mode.
+```
+
+## Project Structure
+
+```
+sinus-ai/
+├── main.py                      # Entry point with CLI
+├── sinus_ai/                    # Main package
+│   ├── __init__.py             # Package initialization
+│   ├── config.py               # Configuration settings
+│   ├── model.py                # SineNet architecture
+│   ├── data.py                 # Data generation
+│   ├── train.py                # Training and evaluation
+│   └── inference.py            # Model loading and prediction
+├── models/                      # Saved model weights (created automatically)
+│   └── sine_model.pth
+├── pyproject.toml              # Project dependencies
+└── README.md                   # This file
+```
+
+## Configuration
+
+Default hyperparameters can be modified in `sinus_ai/config.py`:
+
+- **Model Architecture**: Hidden layer sizes (64, 64, 32)
+- **Training**: 5000 epochs, learning rate 0.001
+- **Data**: 1000 training samples, 200 test samples
+- **Model Path**: `models/sine_model.pth`
+
+## Model Architecture
+
+The `SineNet` model uses a simple feedforward architecture:
+
+- Input: 1 neuron (x value)
+- Hidden Layer 1: 64 neurons + ReLU
+- Hidden Layer 2: 64 neurons + ReLU
+- Hidden Layer 3: 32 neurons + ReLU
+- Output: 1 neuron (sin(x) approximation)
+
+## Dependencies
+
+- Python >= 3.14
+- PyTorch >= 2.9.1
+- NumPy >= 2.3.5
+- Matplotlib >= 3.10.7
+- Jupyter >= 1.1.1 (for notebook experiments)
+
+## License
+
+This project is open source and available under the MIT License.
