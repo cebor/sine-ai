@@ -83,8 +83,8 @@ def evaluate_and_plot(model, x_test, y_test, save_plot=True):
     
     # Create plot
     plt.figure(figsize=(10, 6))
-    plt.plot(x_test.numpy(), y_test.numpy(), label='Actual Sine Function', linewidth=2)
-    plt.plot(x_test.numpy(), predictions.numpy(), label='NN Prediction', linestyle='--', linewidth=2)
+    plt.plot(x_test.cpu().numpy(), y_test.cpu().numpy(), label='Actual Sine Function', linewidth=2)
+    plt.plot(x_test.cpu().numpy(), predictions.cpu().numpy(), label='NN Prediction', linestyle='--', linewidth=2)
     plt.xlabel('x')
     plt.ylabel('sin(x)')
     plt.title('Sine Approximation with Neural Network')

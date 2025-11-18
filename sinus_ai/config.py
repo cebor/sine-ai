@@ -3,6 +3,10 @@
 import os
 
 import numpy as np
+import torch
+
+# Device configuration
+DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Model architecture
 HIDDEN_SIZE_1 = 64

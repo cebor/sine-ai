@@ -27,7 +27,7 @@ def generate_training_data(n_samples=None, x_min=None, x_max=None):
     y = np.sin(x)
     
     # Convert to PyTorch tensors
-    x_tensor = torch.FloatTensor(x).reshape(-1, 1)
-    y_tensor = torch.FloatTensor(y).reshape(-1, 1)
+    x_tensor = torch.FloatTensor(x).reshape(-1, 1).to(config.DEVICE)
+    y_tensor = torch.FloatTensor(y).reshape(-1, 1).to(config.DEVICE)
     
     return x_tensor, y_tensor

@@ -18,12 +18,13 @@ from sinus_ai import (
     predict_interactive,
 )
 from sinus_ai.train import evaluate_and_plot
-from sinus_ai.config import N_SAMPLES_TEST
+from sinus_ai.config import N_SAMPLES_TEST, DEVICE
 
 
 def mode_train():
     """Train a new model and save the weights."""
     print("=== Training Mode ===\n")
+    print(f"Using device: {DEVICE}\n")
     
     # Generate data
     print("Generating training data...")

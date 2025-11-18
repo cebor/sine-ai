@@ -19,6 +19,9 @@ class SineNet(nn.Module):
         self.fc3 = nn.Linear(hidden_size_2, hidden_size_3)
         self.fc4 = nn.Linear(hidden_size_3, 1)
         self.relu = nn.ReLU()
+        
+        # Move model to device
+        self.to(config.DEVICE)
     
     def forward(self, x):
         x = self.relu(self.fc1(x))

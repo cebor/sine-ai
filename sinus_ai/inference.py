@@ -35,7 +35,7 @@ def predict(model, x_value):
         Predicted sine value
     """
     with torch.no_grad():
-        x_tensor = torch.FloatTensor([[x_value]])
+        x_tensor = torch.FloatTensor([[x_value]]).to(config.DEVICE)
         prediction = model(x_tensor)
         return prediction.item()
 
