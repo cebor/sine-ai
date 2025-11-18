@@ -128,6 +128,41 @@ The `SineNet` model uses a simple feedforward architecture:
 - Matplotlib >= 3.10.7
 - Jupyter >= 1.1.1 (for notebook experiments)
 
+## Development
+
+### Keeping Notebooks Clean in Git
+
+This project uses `nbstripout` to prevent notebook outputs and metadata from cluttering git commits. It's already configured in the dev dependencies.
+
+To set it up for your local repository:
+
+```bash
+# Install nbstripout (included in dev dependencies via uv sync)
+nbstripout --install
+```
+
+This adds a git filter that automatically strips:
+- Cell outputs
+- Execution counts
+- Metadata
+
+The notebook (`sine_approximation.ipynb`) will remain functional with its outputs when you work locally, but commits will only include the code and markdown cells.
+
+**Manual setup** (if not using the dev dependencies):
+
+```bash
+pip install nbstripout
+nbstripout --install --attributes .gitattributes
+```
+
+**Verify it's working:**
+
+```bash
+git diff --cached sine_approximation.ipynb
+```
+
+After making changes to the notebook, the diff should only show code/markdown changes, not execution metadata.
+
 ## License
 
 This project is open source and available under the MIT License.
