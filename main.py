@@ -11,6 +11,7 @@ import sys
 
 from sine_ai import (
     SineNet,
+    evaluate_and_plot,
     generate_training_data,
     load_model,
     predict_interactive,
@@ -18,7 +19,6 @@ from sine_ai import (
     train_model,
 )
 from sine_ai.config import DEVICE, N_SAMPLES_TEST
-from sine_ai.train import evaluate_and_plot
 
 
 def mode_train():
