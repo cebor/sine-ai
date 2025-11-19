@@ -1,12 +1,13 @@
 """Neural network model for sine function approximation."""
 
 import torch.nn as nn
+
 from . import config
 
 
 class SineNet(nn.Module):
     """Simple neural network to approximate the sine function."""
-    
+
     def __init__(
         self,
         hidden_size_1=config.HIDDEN_SIZE_1,
@@ -19,10 +20,10 @@ class SineNet(nn.Module):
         self.fc3 = nn.Linear(hidden_size_2, hidden_size_3)
         self.fc4 = nn.Linear(hidden_size_3, 1)
         self.relu = nn.ReLU()
-        
+
         # Move model to device
         self.to(config.DEVICE)
-    
+
     def forward(self, x):
         x = self.relu(self.fc1(x))
         x = self.relu(self.fc2(x))
