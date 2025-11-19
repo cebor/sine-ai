@@ -1,4 +1,4 @@
-"""Sinus AI - Neural Network Sine Function Approximation"""
+"""Sine AI - Neural Network Sine Function Approximation"""
 
 from .data import generate_training_data
 from .inference import load_model, predict_interactive

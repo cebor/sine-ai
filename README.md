@@ -1,4 +1,4 @@
-# Sinus AI
+# Sine AI
 
 A neural network that learns to approximate the sine function using PyTorch.
 
@@ -16,7 +16,7 @@ A neural network that learns to approximate the sine function using PyTorch.
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd sinus-ai
+cd sine-ai
 
 # Install dependencies (using uv)
 uv sync
@@ -86,9 +86,9 @@ Exiting prediction mode.
 ## Project Structure
 
 ```
-sinus-ai/
+sine-ai/
 ├── main.py                      # Entry point with CLI
-├── sinus_ai/                    # Main package
+├── sine_ai/                    # Main package
 │   ├── __init__.py             # Package initialization
 │   ├── config.py               # Configuration settings
 │   ├── model.py                # SineNet architecture
@@ -103,7 +103,7 @@ sinus-ai/
 
 ## Configuration
 
-Default hyperparameters can be modified in `sinus_ai/config.py`:
+Default hyperparameters can be modified in `sine_ai/config.py`:
 
 - **Model Architecture**: Hidden layer sizes (64, 64, 32)
 - **Training**: 5000 epochs, learning rate 0.001

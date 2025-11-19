@@ -1,15 +1,15 @@
-# Sinus AI - Copilot Instructions
+# Sine AI - Copilot Instructions
 
 ## Project Overview
 A PyTorch-based neural network that learns to approximate the sine function. The project demonstrates a clean ML workflow with modular architecture for training, evaluation, and inference.
 
 ## Architecture & Module Responsibilities
 
-- **`sinus_ai/model.py`**: Defines `SineNet` - a 4-layer feedforward network (1→64→64→32→1) with ReLU activations
-- **`sinus_ai/data.py`**: Generates sine function training data as PyTorch tensors
-- **`sinus_ai/train.py`**: Training loop with MSE loss + Adam optimizer; model persistence; evaluation with matplotlib visualization
-- **`sinus_ai/inference.py`**: Model loading and prediction interface (single value + interactive mode)
-- **`sinus_ai/config.py`**: Central configuration (hyperparameters, paths, constants)
+- **`sine_ai/model.py`**: Defines `SineNet` - a 4-layer feedforward network (1→64→64→32→1) with ReLU activations
+- **`sine_ai/data.py`**: Generates sine function training data as PyTorch tensors
+- **`sine_ai/train.py`**: Training loop with MSE loss + Adam optimizer; model persistence; evaluation with matplotlib visualization
+- **`sine_ai/inference.py`**: Model loading and prediction interface (single value + interactive mode)
+- **`sine_ai/config.py`**: Central configuration (hyperparameters, paths, constants)
 - **`main.py`**: CLI entry point with interactive menu and argument-based mode selection
 
 ## Key Patterns & Conventions
@@ -20,7 +20,7 @@ A PyTorch-based neural network that learns to approximate the sine function. The
 
 **Data Format**: All data is PyTorch tensors with shape `(-1, 1)`. Generate with `generate_training_data(n_samples)` which returns `(x_tensor, y_tensor)` tuples.
 
-**Import Style**: Package exports are managed through `__init__.py`. Import from package root: `from sinus_ai import SineNet, train_model, load_model`.
+**Import Style**: Package exports are managed through `__init__.py`. Import from package root: `from sine_ai import SineNet, train_model, load_model`.
 
 ## Developer Workflows
 

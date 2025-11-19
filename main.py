@@ -9,7 +9,7 @@ This script provides three modes of operation:
 import argparse
 import sys
 
-from sinus_ai import (
+from sine_ai import (
     SineNet,
     generate_training_data,
     load_model,
@@ -17,8 +17,8 @@ from sinus_ai import (
     save_model,
     train_model,
 )
-from sinus_ai.config import DEVICE, N_SAMPLES_TEST
-from sinus_ai.train import evaluate_and_plot
+from sine_ai.config import DEVICE, N_SAMPLES_TEST
+from sine_ai.train import evaluate_and_plot
 
 
 def mode_train():
