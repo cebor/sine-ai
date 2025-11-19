@@ -16,3 +16,6 @@ dependencies = [
 dev = [
     "nbstripout>=0.8.2",
 ]
+
+[tool.ruff]
+line-length = 120
