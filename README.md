@@ -29,7 +29,7 @@ uv sync
 Run without arguments to get an interactive menu:
 
 ```bash
-python main.py
+uv run python main.py
 ```
 
 This will display:
@@ -51,13 +51,20 @@ Use command-line arguments for direct mode selection:
 
 ```bash
 # Train a new model
-python main.py train
+uv run python main.py train
 
 # Evaluate existing model
-python main.py evaluate
+uv run python main.py evaluate
 
 # Interactive prediction mode
-python main.py predict
+uv run python main.py predict
+```
+
+**Alternatively**, activate the virtual environment:
+
+```bash
+source .venv/bin/activate
+python main.py [train|evaluate|predict]
 ```
 
 ### Interactive Prediction Mode
@@ -137,8 +144,8 @@ This project uses `nbstripout` to prevent notebook outputs and metadata from clu
 To set it up for your local repository:
 
 ```bash
-# Install nbstripout (included in dev dependencies via uv sync)
-nbstripout --install
+# nbstripout is included in dev dependencies via uv sync
+uv run nbstripout --install
 ```
 
 This adds a git filter that automatically strips:
