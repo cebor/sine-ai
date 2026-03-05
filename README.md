@@ -94,7 +94,7 @@ Exiting prediction mode.
 
 ```
 sine-ai/
-├── main.py                      # Entry point with CLI
+├── main.py                     # Entry point with CLI
 ├── sine_ai/                    # Main package
 │   ├── __init__.py             # Package initialization
 │   ├── config.py               # Configuration settings
@@ -102,7 +102,7 @@ sine-ai/
 │   ├── data.py                 # Data generation
 │   ├── train.py                # Training and evaluation
 │   └── inference.py            # Model loading and prediction
-├── models/                      # Saved model weights (created automatically)
+├── models/                     # Saved model weights (created automatically)
 │   └── sine_model.pth
 ├── pyproject.toml              # Project dependencies
 └── README.md                   # This file
